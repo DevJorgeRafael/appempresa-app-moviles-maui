@@ -5,11 +5,29 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp002"
     Shell.FlyoutBehavior="Disabled"
-    Title="MauiApp002">
+    Title="App Empresa">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Departamentos" Icon="departamentos_icon.png" >
+            <ShellContent
+                Title="Departamentos"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Title="Cargos" Icon="cargos_icon.png" >
+            <ShellContent
+                Title="Cargos"
+                ContentTemplate="{DataTemplate local:Cargos}"
+                Route="Departamentos" />
+        </Tab>
+        <Tab Title="Empleados" Icon="empleados_icon.png" >
+            <ShellContent
+                Title="Empleados"
+                ContentTemplate="{DataTemplate local:Empleados}"
+                Route="Empleados" />
+        </Tab>
+    </TabBar>
+    
+    
 
 </Shell>

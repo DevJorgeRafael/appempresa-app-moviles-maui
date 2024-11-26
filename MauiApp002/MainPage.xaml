@@ -1,15 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp002.MainPage"
-             Title="Cargos">
+             x:Class="MauiApp002.MainPage">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
-            Spacing="25">
-
-            <Label Text="Cargos"/>
+            Spacing="15">
 
             <Label Text="Id Departamento"></Label>
             <Entry x:Name="txtIdDepartamento"></Entry>
@@ -20,12 +17,44 @@
             <Label Text="Ciudad: "></Label>
             <Entry x:Name="txtCiudad"></Entry>
 
-            <Button x:Name="cmdCrear" Text="Crear" Clicked="cmdCrear_Clicked"></Button>
-            <Button x:Name="cmdActualizar" Text="Actualizar" Clicked="cmdActualizar_Clicked"></Button>
-            <Button x:Name="cmdLeer" Text="Leer" Clicked="cmdLeer_Clicked"></Button>
-            <Button x:Name="cmdBorrar" Text="Borrar" Clicked="cmdBorrar_Clicked"></Button>
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <!-- Botón Crear -->
+                <ImageButton Source="add_icon.png"
+                     Clicked="cmdCrear_Clicked"
+                     WidthRequest="50"
+                     HeightRequest="50"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     CornerRadius="10" />
 
+                <!-- Botón Actualizar -->
+                <ImageButton Source="edit_icon.png"
+                     Clicked="cmdActualizar_Clicked"
+                     WidthRequest="50"
+                     HeightRequest="50"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     CornerRadius="10" />
 
+                <!-- Botón Leer -->
+                <ImageButton Source="eye_icon.png"
+                     Clicked="cmdLeer_Clicked"
+                     WidthRequest="50"
+                     HeightRequest="50"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     CornerRadius="10" />
+
+                <!-- Botón Borrar -->
+                <ImageButton Source="delete_icon.png"
+                     Clicked="cmdBorrar_Clicked"
+                     WidthRequest="50"
+                     HeightRequest="50"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     CornerRadius="10" />
+                
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

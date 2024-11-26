@@ -5,7 +5,6 @@ namespace MauiApp002
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
         private string apiUrl = "https://appempresaapi.azurewebsites.net/api/Departamentos";
 
         public MainPage()
