@@ -45,54 +45,73 @@ namespace AppEmpresa.ConsumeAPI
 
         public static T Read_ById(string urlApi, int id) 
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                urlApi = urlApi + "/" + id;
-                var response = client.GetStringAsync(urlApi);
-                response.Wait();
+                using (HttpClient client = new HttpClient())
+                {
+                    urlApi = urlApi + "/" + id;
+                    var response = client.GetStringAsync(urlApi);
+                    response.Wait();
 
-                var json = response.Result;
-                var result = JsonConvert.DeserializeObject<T>(json);
-                return result;
+                    var json = response.Result;
+                    var result = JsonConvert.DeserializeObject<T>(json);
+                    return result;
+                }
+            } catch
+            {
+                return default;
             }
+
         }
 
         public static bool Update(string urlApi, int id, T data)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                urlApi = urlApi + "/" + id;
-                client.BaseAddress = new Uri(urlApi);
-                client.DefaultRequestHeaders.Accept.Add(
-                    System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json")
-                );
+                using (HttpClient client = new HttpClient())
+                {
+                    urlApi = urlApi + "/" + id;
+                    client.BaseAddress = new Uri(urlApi);
+                    client.DefaultRequestHeaders.Accept.Add(
+                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json")
+                    );
 
-                var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-                var request = new HttpRequestMessage(HttpMethod.Put, urlApi);
-                request.Content = new StringContent(json, Encoding.UTF8, "application/json");
+                    var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+                    var request = new HttpRequestMessage(HttpMethod.Put, urlApi);
+                    request.Content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var response = client.SendAsync(request);
-                response.Wait();
+                    var response = client.SendAsync(request);
+                    response.Wait();
 
-                json = response.Result.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<T>(json);
+                    json = response.Result.Content.ReadAsStringAsync().Result;
+                    var result = JsonConvert.DeserializeObject<T>(json);
 
-                return true;
+                    return true;
+                }
+            } catch
+            {
+                return default;
             }
         }
 
         public static bool Delete(string urlApi, int id)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                urlApi = urlApi + "/" + id;
-                client.BaseAddress = new Uri(urlApi);
-                client.DefaultRequestHeaders.Accept.Add(
-                    System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json")
-                );
-                var response = client.DeleteAsync(urlApi);
-                response.Wait();
-                return true;
+                using (HttpClient client = new HttpClient())
+                {
+                    urlApi = urlApi + "/" + id;
+                    client.BaseAddress = new Uri(urlApi);
+                    client.DefaultRequestHeaders.Accept.Add(
+                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json")
+                    );
+                    var response = client.DeleteAsync(urlApi);
+                    response.Wait();
+                    return true;
+                }
+            } catch
+            {
+                return default;
             }
         }
     }

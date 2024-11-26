@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp002.MainPage"
+             Title="Cargos">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label Text="Cargos"/>
+
+            <Label Text="Id Departamento"></Label>
+            <Entry x:Name="txtIdDepartamento"></Entry>
+
+            <Label Text="Nombre Departamento"></Label>
+            <Entry x:Name="txtNombreDepartamento"></Entry>
+
+            <Label Text="Ciudad: "></Label>
+            <Entry x:Name="txtCiudad"></Entry>
+
+            <Button x:Name="cmdCrear" Text="Crear" Clicked="cmdCrear_Clicked"></Button>
+            <Button x:Name="cmdActualizar" Text="Actualizar" Clicked="cmdActualizar_Clicked"></Button>
+            <Button x:Name="cmdLeer" Text="Leer" Clicked="cmdLeer_Clicked"></Button>
+            <Button x:Name="cmdBorrar" Text="Borrar" Clicked="cmdBorrar_Clicked"></Button>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
