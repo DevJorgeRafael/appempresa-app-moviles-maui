@@ -25,7 +25,8 @@
                      HeightRequest="50"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
-                     CornerRadius="10" />
+                     CornerRadius="10"
+                     BackgroundColor="LightBlue"/>
 
                 <!-- Botón Actualizar -->
                 <ImageButton Source="edit_icon.png"
@@ -34,7 +35,8 @@
                      HeightRequest="50"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
-                     CornerRadius="10" />
+                     CornerRadius="10" 
+                     BackgroundColor="LightGreen"/>
 
                 <!-- Botón Leer -->
                 <ImageButton Source="eye_icon.png"
@@ -43,7 +45,8 @@
                      HeightRequest="50"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
-                     CornerRadius="10" />
+                     CornerRadius="10" 
+                     BackgroundColor="Khaki"/>
 
                 <!-- Botón Borrar -->
                 <ImageButton Source="delete_icon.png"
@@ -52,7 +55,8 @@
                      HeightRequest="50"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
-                     CornerRadius="10" />
+                     CornerRadius="10" 
+                     BackgroundColor="IndianRed"/>
                 
             </HorizontalStackLayout>
         </VerticalStackLayout>

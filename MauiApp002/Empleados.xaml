@@ -3,10 +3,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp002.Empleados"
              Title="Empleados">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout
+                Padding="30,0"
+                Spacing="15">
+
+            <Label Text="Id Empleado"></Label>
+            <Entry x:Name="txtIdEmpleado"></Entry>
+
+            <Label Text="Nombres"></Label>
+            <Entry x:Name="txtNombresEmpleado"></Entry>
+
+            <Label Text="Apellidos"></Label>
+            <Entry x:Name="txtApellidosEmpleado"></Entry>
+
+            <Label Text="Dirección"></Label>
+            <Entry x:Name="txtDireccionEmpleado"></Entry>
+
+            <Label Text="Fecha de Nacimiento"></Label>
+            <Entry x:Name="txtFechaNacimientoEmpleado"
+            Placeholder="YYYY-MM-DD" />
+
+            <Label Text="Salario"></Label>
+            <Entry x:Name="txtSalarioEmpleado"
+            Keyboard="Numeric" />
+
+            <Label Text="Comisión"></Label>
+            <Entry x:Name="txtComisionEmpleado"
+            Keyboard="Numeric" />
+
+            <Label Text="Cargo ID"></Label>
+            <Entry x:Name="txtCargoIdEmpleado"></Entry>
+
+            <Label Text="Departamento ID"></Label>
+            <Entry x:Name="txtDepartamentoIdEmpleado"></Entry>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <!-- Botón Crear -->
+                <ImageButton Source="add_icon.png"
+                 Clicked="cmdCrear_Clicked"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 CornerRadius="10"
+                 BackgroundColor="LightBlue"/>
+
+                <!-- Botón Actualizar -->
+                <ImageButton Source="edit_icon.png"
+                 Clicked="cmdActualizar_Clicked"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 CornerRadius="10" 
+                 BackgroundColor="LightGreen"/>
+
+                <!-- Botón Leer -->
+                <ImageButton Source="eye_icon.png"
+                 Clicked="cmdLeer_Clicked"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 CornerRadius="10" 
+                 BackgroundColor="Khaki"/>
+
+                <!-- Botón Borrar -->
+                <ImageButton Source="delete_icon.png"
+                 Clicked="cmdBorrar_Clicked"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 CornerRadius="10" 
+                 BackgroundColor="IndianRed"/>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

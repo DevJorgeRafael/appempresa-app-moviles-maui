@@ -3,10 +3,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp002.Cargos"
              Title="Cargos">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="15">
+
+            <Label Text="Id Cargo"></Label>
+            <Entry x:Name="txtIdCargo"></Entry>
+
+            <Label Text="Nombre Cargo"></Label>
+            <Entry x:Name="txtNombreCargo"></Entry>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <!-- Botón Crear -->
+                <ImageButton Source="add_icon.png"
+                 Clicked="cmdCrear_Clicked"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 CornerRadius="10"
+                 BackgroundColor="LightBlue"/>
+
+                <!-- Botón Actualizar -->
+                <ImageButton Source="edit_icon.png"
+                 Clicked="cmdActualizar_Clicked"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 CornerRadius="10" 
+                 BackgroundColor="LightGreen"/>
+
+                <!-- Botón Leer -->
+                <ImageButton Source="eye_icon.png"
+                 Clicked="cmdLeer_Clicked"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 CornerRadius="10" 
+                 BackgroundColor="Khaki"/>
+
+                <!-- Botón Borrar -->
+                <ImageButton Source="delete_icon.png"
+                 Clicked="cmdBorrar_Clicked"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 CornerRadius="10" 
+                 BackgroundColor="IndianRed"/>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

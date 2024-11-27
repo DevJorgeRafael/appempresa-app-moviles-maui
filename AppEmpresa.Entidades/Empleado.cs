@@ -14,7 +14,7 @@ namespace AppEmpresa.Entidades
         public string? Direcrion { get; set;}
         public DateTime? FechaNacimiento { get; set;}
         public double Salario { get; set;}
-        public double? Comision { get;}
+        public double? Comision { get; set; }
 
         public int CargoId {  get; set;}  //FK
         public Cargo? Cargo { get; set;}
